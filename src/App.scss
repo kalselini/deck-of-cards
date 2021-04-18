@@ -1,0 +1,54 @@
+@import "./mixins.scss";
+@import "./reset.scss";
+
+
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #305d3c;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 100vh;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto 0px 180px;
+}
+
+.card {
+  margin-left: -10.4rem;
+  // @include transition (all, 0.25s, ease);
+  @include bp-medium {
+    margin-left: -195px;
+  }
+  @include bp-small {
+    margin-left: -198px;    
+  }
+  @include bp-mobileOnly {
+    margin-left: -200px;    
+  }
+}
+
+.animation {
+  animation: 2.4s linear shuffle;
+}
+
+@keyframes shuffle {
+  20% {
+    margin-left: -12rem;
+  }
+
+  40% {
+    margin-left: -11.9rem;
+  }
+
+  60% {
+    margin-left: -12rem;
+  }
+}

@@ -1,0 +1,39 @@
+@import "../../mixins.scss";
+
+
+.card {
+  height: 14.1em;
+  width: 10em;
+  background-color: white;
+  background-size: cover;
+  position: relative;
+  box-shadow: 1px 1px 4px #696969;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.card__suit-ranking {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+}
+
+.card__suit-ranking-rotated {
+  position: absolute;
+  bottom: 0.8rem;
+  right: 0.8rem;
+  transform: rotate(-180deg);
+}
+
+img.suit-ranking__symbol, .suit-ranking__symbol {
+  max-width: 1.2rem;
+}
+
+img.card__suit-symbol {
+  height: 2.4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
