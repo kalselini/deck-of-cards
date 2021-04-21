@@ -17,7 +17,15 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint ./src --fix",
+      "prettier-eslint 'src/**/*.{js,json}' --write",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -52,6 +60,9 @@
     "@storybook/addon-links": "^6.2.8",
     "@storybook/node-logger": "^6.2.8",
     "@storybook/preset-create-react-app": "^3.1.7",
-    "@storybook/react": "^6.2.8"
+    "@storybook/react": "^6.2.8",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "prettier-eslint-cli": "^5.0.1"
   }
 }
