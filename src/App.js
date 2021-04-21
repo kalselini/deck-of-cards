@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 
-import { Card, ActionsButtons } from "./components";
+import { Card, ButtonGroup, Button } from "./components";
+import ShuffleIcon from "@material-ui/icons/Shuffle";
+import ExposurePlus1Icon from "@material-ui/icons/ExposurePlus1";
+import ImportExportIcon from "@material-ui/icons/ImportExport";
 import { deckArray } from "./components/utils/DeckArray";
 
 const App = () => {
@@ -43,6 +46,7 @@ const App = () => {
     let cardsDrawnArray = cardsDrawn;
     cardsDrawnArray.length < 52 && cardsDrawnArray.push(randomCard);
     setCardsDrawn(cardsDrawnArray);
+    // !cardsArray.length() ? setbuttonsDisabled(true) : null;
   };
 
   const arrange = () => {
@@ -54,7 +58,7 @@ const App = () => {
   };
 
   return (
-    <div style={{ width: "100%" }}>
+    <div className="container" style={{ width: "100%", textAlign: "centre" }}>
       <div className="cards-container">
         {cardsArray &&
           cardsArray.map((card, index) => {
@@ -74,13 +78,28 @@ const App = () => {
             );
           })}
       </div>
-      <ActionsButtons
-        shuffle={() => shuffle(cardsArray)}
-        dealOneCard={() => dealOneCard()}
-        arrange={() => arrange()}
-        deckArray={deckArray}
-        buttonsDisabled={buttonsDisabled}
-      />
+      <div className="action-buttons">
+        <ButtonGroup>
+          <Button
+            onClick={() => shuffle(cardsArray)}
+            startIcon={<ShuffleIcon />}
+            disabled={buttonsDisabled}
+            label={"Shuffle"}
+          />
+          <Button
+            onClick={() => dealOneCard()}
+            startIcon={<ExposurePlus1Icon />}
+            disabled={buttonsDisabled}
+            label={"Deal one card"}
+          />
+          <Button
+            onClick={() => arrange()}
+            startIcon={<ImportExportIcon />}
+            disabled={buttonsDisabled}
+            label={"Arrange"}
+          />
+        </ButtonGroup>
+      </div>
       <div className="cards-container">
         {cardsDrawn &&
           cardsDrawn.map((card, index) => {
