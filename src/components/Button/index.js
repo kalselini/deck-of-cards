@@ -4,16 +4,13 @@ import MUIButton from "@material-ui/core/Button";
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ label, startIcon, endIcon, color, className }) => {
+const Button = ({ label, disabled, startIcon, onClick }) => {
   return (
     <MUIButton
-      color={color}
       variant="contained"
-      disableElevation
-      className={className}
-      borderRadius={0}
-      endIcon={endIcon}
+      disabled={disabled}
       startIcon={startIcon}
+      onClick={onClick}
     >
       {label}
     </MUIButton>
