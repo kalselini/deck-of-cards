@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "animate.css": "^3.7.0",
     "babel-loader": "^8.2.2",
     "classnames": "^2.3.1",
