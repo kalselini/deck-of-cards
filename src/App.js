@@ -4,18 +4,19 @@ import { Card, ActionsButtons } from "./components";
 import { deckArray } from "./components/utils/DeckArray";
 
 const App = () => {
-  const [className, setclassName] = useState("");
+  const [className, setClassName] = useState("");
   const [buttonsDisabled, setbuttonsDisabled] = useState(false);
   const [cardsArray, setCardsArray] = useState(deckArray);
   const [cardsDrawn, setCardsDrawn] = useState([]);
+  const [sortComplete, setSortComplete] = useState(false);
   const [front, setFront] = useState(true);
 
   const startStopAnimation = () => {
     setbuttonsDisabled(true);
     setFront(false);
-    setclassName(className ? "" : "animation");
+    setClassName(className ? "" : "animation");
     setTimeout(() => {
-      setclassName("");
+      setClassName("");
       setFront(true);
       setbuttonsDisabled(false);
     }, 2400); //TODO: improve and also disable shuffle and deal card button once deck is complete
@@ -44,6 +45,14 @@ const App = () => {
     setCardsDrawn(cardsDrawnArray);
   };
 
+  const arrange = () => {
+    const sortCardsDrawn = cardsDrawn.sort(function (a, b) {
+      return a.index - b.index;
+    });
+    setCardsDrawn(sortCardsDrawn);
+    setSortComplete(sortComplete ? false : true);
+  };
+
   return (
     <div style={{ width: "100%" }}>
       <div className="cards-container">
@@ -68,6 +77,7 @@ const App = () => {
       <ActionsButtons
         shuffle={() => shuffle(cardsArray)}
         dealOneCard={() => dealOneCard()}
+        arrange={() => arrange()}
         deckArray={deckArray}
         buttonsDisabled={buttonsDisabled}
       />
