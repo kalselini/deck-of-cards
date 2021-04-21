@@ -1,10 +1,11 @@
-import React from "react";
-import MUIButton from "@material-ui/core/Button";
+import React from 'react';
+import MUIButton from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
 
 /**
- * Primary UI component for user interaction
+ * Primary UI component for Button
  */
-const Button = ({ label, disabled, startIcon, onClick }) => {
+const Button = ({ children, disabled, startIcon, onClick }) => {
   return (
     <MUIButton
       variant="contained"
@@ -12,9 +13,23 @@ const Button = ({ label, disabled, startIcon, onClick }) => {
       startIcon={startIcon}
       onClick={onClick}
     >
-      {label}
+      {children}
     </MUIButton>
   );
 };
 
 export default Button;
+
+Button.propTypes = {
+  children: PropTypes.node,
+  disabled: PropTypes.bool,
+  startIcon: PropTypes.node,
+  onClick: PropTypes.func,
+};
+
+Button.defaultProps = {
+  children: '',
+  disabled: false,
+  startIcon: null,
+  onClick: () => {},
+};

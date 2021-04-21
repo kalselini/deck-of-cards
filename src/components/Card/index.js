@@ -1,30 +1,29 @@
-import React from "react";
-import classNames from "classnames";
-import PropTypes from "prop-types";
+import React from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-import backCardImg from "../../assets/backCardImg.png";
-import heart from "../../assets/heart.png";
-import diamond from "../../assets/diamond.png";
-import club from "../../assets/club.png";
-import spade from "../../assets/spade.png";
+import backCardImg from '../../assets/backCardImg.png';
+import heart from '../../assets/heart.png';
+import diamond from '../../assets/diamond.png';
+import club from '../../assets/club.png';
+import spade from '../../assets/spade.png';
 
-import "./card.scss";
+import './card.scss';
 
 const Card = (props) => {
   const { suit, cardRanking, front, className } = props;
 
   const getCardStyle = (suit) => {
-    let symbol;
-    let color;
+    let symbol, color;
     switch (suit) {
-      case "Diamond":
-        return { symbol: diamond, color: "red" };
-      case "Heart":
-        return { symbol: heart, color: "red" };
-      case "Club":
-        return { symbol: club, color: "black" };
-      case "Spade":
-        return { symbol: spade, color: "black" };
+      case 'Diamond':
+        return { symbol: diamond, color: 'red' };
+      case 'Heart':
+        return { symbol: heart, color: 'red' };
+      case 'Club':
+        return { symbol: club, color: 'black' };
+      case 'Spade':
+        return { symbol: spade, color: 'black' };
       default:
         return { symbol, color };
     }
@@ -34,8 +33,9 @@ const Card = (props) => {
 
   return front ? (
     <div
-      className={classNames("card", className)}
+      className={classNames('card', className)}
       style={{ color: `${cardStyle.color}` }}
+      data-testid="card-front"
     >
       <div className="card__suit-ranking">
         <div className="suit-ranking__symbol">{cardRanking}</div>
@@ -63,7 +63,7 @@ const Card = (props) => {
     </div>
   ) : (
     <div
-      className={classNames("card", className)}
+      className={classNames('card', className)}
       style={{ backgroundImage: `url(${backCardImg})` }}
     ></div>
   );
@@ -73,6 +73,14 @@ Card.propTypes = {
   suit: PropTypes.string,
   cardRanking: PropTypes.string,
   front: PropTypes.bool,
+  className: PropTypes.string,
+};
+
+Card.defaultProps = {
+  suit: '',
+  cardRanking: '',
+  front: true,
+  className: '',
 };
 
 export default Card;

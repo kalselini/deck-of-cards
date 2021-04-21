@@ -1,28 +1,32 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { Card, ButtonGroup, Button } from "./components";
-import ShuffleIcon from "@material-ui/icons/Shuffle";
-import ExposurePlus1Icon from "@material-ui/icons/ExposurePlus1";
-import ImportExportIcon from "@material-ui/icons/ImportExport";
-import { deckArray } from "./components/utils/DeckArray";
+import { Card, ButtonGroup, Button } from './components';
+import ShuffleIcon from '@material-ui/icons/Shuffle';
+import ExposurePlus1Icon from '@material-ui/icons/ExposurePlus1';
+import ImportExportIcon from '@material-ui/icons/ImportExport';
+import { deckArray } from './components/utils/DeckArray';
+
+import './mixins.scss';
 
 const App = () => {
-  const [className, setClassName] = useState("");
+  const [className, setClassName] = useState('');
   const [buttonsDisabled, setbuttonsDisabled] = useState(false);
   const [cardsArray, setCardsArray] = useState(deckArray);
   const [cardsDrawn, setCardsDrawn] = useState([]);
   const [sortComplete, setSortComplete] = useState(false);
   const [front, setFront] = useState(true);
 
+  // Disables the action buttons, turn the cards face down,
+  // and enable shuffle animation sequence for 2.4s
   const startStopAnimation = () => {
     setbuttonsDisabled(true);
     setFront(false);
-    setClassName(className ? "" : "animation");
+    setClassName(className ? '' : 'animation');
     setTimeout(() => {
-      setClassName("");
+      setClassName('');
       setFront(true);
       setbuttonsDisabled(false);
-    }, 2400); //TODO: improve and also disable shuffle and deal card button once deck is complete
+    }, 2400);
   };
 
   // Fisher-Yates Shuffle
@@ -32,7 +36,6 @@ const App = () => {
       deck.push(deck.splice(Math.floor(Math.random() * count), 1)[0]);
       count -= 1;
     }
-    // setCardsArray(deck);
     startStopAnimation();
   };
 
@@ -58,7 +61,7 @@ const App = () => {
   };
 
   return (
-    <div className="container" style={{ width: "100%", textAlign: "centre" }}>
+    <div className="container" style={{ width: '100%', textAlign: 'centre' }}>
       <div className="cards-container">
         {cardsArray &&
           cardsArray.map((card, index) => {
@@ -70,7 +73,6 @@ const App = () => {
                 <Card
                   suit={card.suit}
                   cardRanking={card.card}
-                  color={card.color}
                   front={front}
                   className={className}
                 />
@@ -84,20 +86,24 @@ const App = () => {
             onClick={() => shuffle(cardsArray)}
             startIcon={<ShuffleIcon />}
             disabled={buttonsDisabled}
-            label={"Shuffle"}
-          />
+          >
+            Shuffle
+          </Button>
           <Button
             onClick={() => dealOneCard()}
             startIcon={<ExposurePlus1Icon />}
             disabled={buttonsDisabled}
-            label={"Deal one card"}
-          />
+          >
+            Deal one card
+          </Button>
+
           <Button
             onClick={() => arrange()}
             startIcon={<ImportExportIcon />}
             disabled={buttonsDisabled}
-            label={"Arrange"}
-          />
+          >
+            Arrange
+          </Button>
         </ButtonGroup>
       </div>
       <div className="cards-container">

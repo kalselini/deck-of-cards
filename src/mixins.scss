@@ -1,13 +1,6 @@
-@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
-  -webkit-transition: $what $time $how;
-  -moz-transition:    $what $time $how;
-  -ms-transition:     $what $time $how;
-  -o-transition:      $what $time $how;
-  transition:         $what $time $how;
-}
-
-
-
+$background-color: #305d3c;
+$font-family: Sans-Serif;
+$animation-duration: 2.4s;
 
 @mixin bp-mobileOnly {
   @media only screen and (max-width: 480px) {
