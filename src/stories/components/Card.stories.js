@@ -16,7 +16,6 @@ export default {
       control: {
         type: 'select',
         options: [
-          '0',
           '1',
           '2',
           '3',

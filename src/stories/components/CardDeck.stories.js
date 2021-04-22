@@ -5,7 +5,12 @@ import { CardDeck, deckArray } from '../../components';
 export default {
   title: '02-Components/CardDeck',
   component: CardDeck,
-  argTypes: {},
+  argTypes: {
+    // Hides className from the storybook controls
+    deckArray: {
+      table: { disable: true },
+    },
+  },
 };
 
 const Template = (args) => <CardDeck {...args} />;

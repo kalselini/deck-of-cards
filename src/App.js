@@ -84,7 +84,6 @@ const App = () => {
         >
           Deal one card
         </Button>
-
         <Button
           onClick={() => arrange()}
           startIcon={<ImportExportIcon />}

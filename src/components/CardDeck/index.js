@@ -29,7 +29,7 @@ const CardDeck = (props) => {
                 suit={card.suit}
                 cardRanking={card.card}
                 front={front}
-                className={setAnimationClassName()}
+                className={'deck ' + setAnimationClassName()}
               />
             </div>
           );
