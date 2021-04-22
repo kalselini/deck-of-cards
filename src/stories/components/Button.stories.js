@@ -1,5 +1,5 @@
 import React from 'react';
-import ShuffleIcon from '@material-ui/icons/Shuffle';
+import { ShuffleIcon } from '../../assets';
 
 import { Button } from '../../components';
 

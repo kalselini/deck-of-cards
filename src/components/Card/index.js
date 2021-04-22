@@ -2,11 +2,12 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import backCardImg from '../../assets/backCardImg.png';
-import heart from '../../assets/heart.png';
-import diamond from '../../assets/diamond.png';
-import club from '../../assets/club.png';
-import spade from '../../assets/spade.png';
+import { backCardImg, club, diamond, heart, spade } from '../../assets';
+// import backCardImg from '../../assets/backCardImg.png';
+// import heart from '../../assets/heart.png';
+// import diamond from '../../assets/images/diamond.png';
+// import club from '../../assets/club.png';
+// import spade from '../../assets/spade.png';
 
 import './card.scss';
 

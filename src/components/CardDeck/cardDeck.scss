@@ -1,0 +1,39 @@
+@import "../../mixins.scss";
+
+.cards-container {
+    display: flex;
+    max-width: fit-content;
+    margin: 4rem 0 4rem 10.4rem;
+  }
+
+  .card {
+    margin-left: -10.4rem;
+    @include bp-medium {
+      margin-left: -195px;
+    }
+    @include bp-small {
+      margin-left: -198px;    
+    }
+    @include bp-mobileOnly {
+      margin-left: -200px;    
+    }
+  }
+
+
+  .animation {
+    animation: 2.4s linear shuffle;
+  }
+  
+  @keyframes shuffle {
+    20% {
+      margin-left: -12rem;
+    }
+  
+    40% {
+      margin-left: -11.9rem;
+    }
+  
+    60% {
+      margin-left: -12rem;
+    }
+  }

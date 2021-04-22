@@ -1,7 +1,5 @@
 import React from 'react';
-import ShuffleIcon from '@material-ui/icons/Shuffle';
-import ExposurePlus1Icon from '@material-ui/icons/ExposurePlus1';
-import ImportExportIcon from '@material-ui/icons/ImportExport';
+import { ShuffleIcon, ExposurePlus1Icon, ImportExportIcon } from '../../assets';
 
 import { ButtonGroup, Button } from '../../components';
 

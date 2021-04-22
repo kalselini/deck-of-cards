@@ -2,7 +2,7 @@ import React from 'react';
 import { screen, render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Button from './index';
-import ShuffleIcon from '@material-ui/icons/Shuffle';
+import { ShuffleIcon } from '../../assets';
 
 afterEach(cleanup);
 
