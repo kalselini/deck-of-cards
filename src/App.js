@@ -4,6 +4,7 @@ import { CardDeck, ButtonGroup, Button, deckArray } from './components';
 import { ShuffleIcon, ExposurePlus1Icon, ImportExportIcon } from './assets';
 
 import './mixins.scss';
+import './App.scss';
 
 const App = () => {
   const [shuffleAnimation, setShuffleAnimation] = useState(false);
@@ -15,7 +16,7 @@ const App = () => {
 
   // Disables the action buttons, turn the cards face down,
   // and enable shuffle animation sequence for 2.4s
-  const startAnimation = () => {
+  const startShuffleAnimation = () => {
     setbuttonsDisabled(true);
     setFront(false);
     setShuffleAnimation(true);
@@ -38,7 +39,7 @@ const App = () => {
       deck.push(deck.splice(Math.floor(Math.random() * count), 1)[0]);
       count -= 1;
     }
-    startAnimation();
+    startShuffleAnimation();
   };
 
   const dealOneCard = () => {

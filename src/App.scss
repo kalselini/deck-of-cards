@@ -9,7 +9,6 @@ body {
   scroll-behavior: smooth;
   font-family: $font-family;
   background-color: $background-color;
-
 }
 
 .container {
@@ -18,4 +17,9 @@ body {
   align-items: center;
   width: '100%';
   text-align: 'centre';
+  padding: 2rem;
+}
+
+.cards-deck {
+  margin: 4rem 0 4rem 10em;
 }

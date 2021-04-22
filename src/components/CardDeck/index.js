@@ -13,23 +13,16 @@ const CardDeck = (props) => {
   };
 
   return (
-    <div className="cards-container">
+    <div className="cards-deck">
       {deckArray &&
         deckArray.map((card, index) => {
           return (
-            <div
-              className={classNames(
-                'cards-container__deck',
-                'animated',
-                className
-              )}
-              key={index}
-            >
+            <div className={classNames('animated', className)} key={index}>
               <Card
                 suit={card.suit}
                 cardRanking={card.card}
                 front={front}
-                className={'deck ' + setAnimationClassName()}
+                className={'cards-deck__card ' + setAnimationClassName()}
               />
             </div>
           );
