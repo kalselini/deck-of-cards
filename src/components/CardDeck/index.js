@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import Card from '../Card';
 
 import './cardDeck.scss';
@@ -35,6 +36,20 @@ const CardDeck = (props) => {
         })}
     </div>
   );
+};
+
+CardDeck.propTypes = {
+  front: PropTypes.bool,
+  className: PropTypes.string,
+  deckArray: PropTypes.array,
+  shuffle: PropTypes.bool,
+};
+
+CardDeck.defaultProps = {
+  front: true,
+  className: '',
+  deckArray: [],
+  shuffle: false,
 };
 
 export default CardDeck;
