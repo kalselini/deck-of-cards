@@ -11,7 +11,7 @@
 
 ## <a name="start">Description 💬</a>
 
-React Single Player Game displaying a deck of playing cards.
+React Single Page Application displaying a deck of playing cards.
 You have 3 actions:
 - shuffle the deck of cards
 - draw any given number of cards from the deck
