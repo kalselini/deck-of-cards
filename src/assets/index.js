@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 // export images
 export const backCardImg = require('./images/back_card_img.png');
 export const club = require('./images/club.png');

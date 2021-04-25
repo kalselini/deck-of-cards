@@ -13,7 +13,6 @@ export default {
   },
 };
 
-/* eslint-disable react/jsx-props-no-spreading */
 const Template = (args) => <CardDeck {...args} />;
 
 export const Primary = Template.bind({});

@@ -15,11 +15,12 @@ const CardDeck = (props) => {
   return (
     <div className="cards-deck">
       {deckArray &&
-        deckArray.map((card) => {
+        deckArray.map((card, index) => {
           return (
             <div
               className={classNames('animated', className)}
-              getbytestid="cards-deck__cards"
+              getByTestId="cards-deck__cards"
+              key={index}
             >
               <Card
                 suit={card.suit}
@@ -41,7 +42,6 @@ CardDeck.propTypes = {
   shuffle: PropTypes.bool,
 };
 
-/* eslint react/forbid-prop-types: 0 */
 CardDeck.defaultProps = {
   front: true,
   className: '',
