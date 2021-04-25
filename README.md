@@ -25,15 +25,6 @@ Drawn cards are removed from the original deck and displayed below.
 
 ## <a name="start">Getting Started 🛠</a>
 
-### Prerequisites
-
-- Node 14
-- `lerna` installed globally
-- `npx` installed globally
-
-```
-npm i -g npx lerna
-```
 
 ### Initial install
 
@@ -51,54 +42,26 @@ Details are in `package.json` .
 
 ## <a name="dev">Development mode ⚠️</a>
 
-### B2C Storefront React App
+### Deck of Cards React App
 
-Run B2C Example app on a dev server at [localhost:3000](http://localhost:3000)
+Run Deck of Cards app on a dev server at [localhost:3000](http://localhost:3000)
 
 ```
 yarn start
 ```
 
-Build B2C Client Side React App
-
-```
-npm run build:app:b2c:csr
-```
-
-Serve B2C Client Side production build (note: to serve you must first have performaced the above build step)
-
-```
-npm run start:csr:b2c
-```
-
-## <a name="lint">JS and CSS Linting 🧹</a>
+## <a name="lint">JS and SCSS Linting 🧹</a>
 
 ### Stylelint
 
 We use [StyleLint](https://stylelint.io/) to avoid errors and enforce consistent
 conventions in the stylesheets.
 
-- `npm run lint:css` StyleLint allows us to:
-
-- use plugins to enforce conventions
-- use custom plugins to enforce design system rules like 0.25rem multiples for
-
-  spacing
-
-- detect subtle mistakes like overriding shorthand properties
-- opt-in to a small subset of the CSS language it to keep things consistent and
-
-  easy to use/learnCSS
-
-- enforce conventions that make it easier to collaborate and review code liked
-
-ordered declarations
-
-Project-wide configuration is defined in `stylelint.config.js`
+- `yarn lint:css` Project-wide configuration is defined in `./.stylelintrc`
 
 ### ESLint
 
-`npm run lint:js` Project-wide configuration is defined in `eslintrc.js`.
+`yarn lint:js` Project-wide configuration is defined in `./.eslintrc`.
 
 ## <a name="tests">Tests 📊</a>
 
@@ -128,12 +91,6 @@ Build storybook to `./storybook-dist/`
 
 ```
 yarn build:storybook
-```
-
-Serve storybook (production)
-
-```
-yarn prod:storybook
 ```
 
 Storybook config is in `./.storybook/`
