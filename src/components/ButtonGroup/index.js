@@ -1,19 +1,24 @@
-import React from "react";
-import MUIButtonGroup from "@material-ui/core/ButtonGroup";
+import React from 'react';
+import MUIButtonGroup from '@material-ui/core/ButtonGroup';
+import PropTypes from 'prop-types';
 
 /**
- * Primary UI component for user interaction
+ * Primary UI component for Button Group
  */
-const ButtonGroup = ({ children, color }) => {
+const ButtonGroup = ({ children }) => {
   return (
-    <MUIButtonGroup
-      color={color}
-      variant="contained"
-      aria-label="contained button group"
-    >
+    <MUIButtonGroup variant="contained" aria-label="contained button group">
       {children}
     </MUIButtonGroup>
   );
 };
 
 export default ButtonGroup;
+
+ButtonGroup.propTypes = {
+  children: PropTypes.node,
+};
+
+ButtonGroup.defaultProps = {
+  children: '',
+};

@@ -1,12 +1,10 @@
-import React from "react";
-import ShuffleIcon from "@material-ui/icons/Shuffle";
-import ExposurePlus1Icon from "@material-ui/icons/ExposurePlus1";
-import ImportExportIcon from "@material-ui/icons/ImportExport";
+import React from 'react';
+import { ShuffleIcon, ExposurePlus1Icon, ImportExportIcon } from '../../assets';
 
-import { ButtonGroup, Button } from "../../components";
+import { ButtonGroup, Button } from '../../components';
 
 export default {
-  title: "02-Components/ButtonGroup",
+  title: '02-Components/ButtonGroup',
   component: ButtonGroup,
   argTypes: {},
 };
@@ -15,21 +13,21 @@ const Template = (args) => <ButtonGroup {...args} />;
 
 const buttonsArray = [
   {
-    label: "Shuffle",
+    children: 'Shuffle',
     startIcon: <ShuffleIcon />,
   },
   {
-    label: "Deal one card",
+    children: 'Deal one card',
     startIcon: <ExposurePlus1Icon />,
   },
   {
-    label: "Arrange",
+    children: 'Arrange',
     startIcon: <ImportExportIcon />,
   },
 ];
 
 const buttons = buttonsArray.map((button) => (
-  <Button startIcon={button.startIcon} label={button.label} />
+  <Button startIcon={button.startIcon}>{button.children}</Button>
 ));
 
 export const Primary = Template.bind({});

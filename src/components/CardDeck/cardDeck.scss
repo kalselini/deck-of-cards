@@ -1,0 +1,42 @@
+@import "../../mixins.scss";
+
+
+.cards-deck {
+    display: flex;
+    max-width: fit-content;
+    margin: 0rem 0 0rem 10em;
+  }
+
+.cards-deck__card {
+  margin-left: -8.8em;
+  @include bp-large {
+    margin-left: -9em;
+  }
+  @include bp-medium {
+    margin-left: -9.4em;
+  }
+  @include bp-small {
+    margin-left: -9.8em;
+  }
+  @include bp-mobileOnly {
+    margin-left: -9.9em;
+  }
+}
+
+.animation {
+  animation: 2.4s linear shuffle;
+}
+
+@keyframes shuffle {
+  20% {
+    margin-left: -10em;
+  }
+
+  40% {
+    margin-left: -9.8em;
+  }
+
+  60% {
+    margin-left: -10em;
+  }
+}
