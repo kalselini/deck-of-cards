@@ -16,7 +16,7 @@ describe('Card Deck component', () => {
 
   describe('given deck array and default props', () => {
     const testProps = {
-      deckArray: deckArray,
+      deckArray,
     };
 
     test('should render deck container correctly', () => {

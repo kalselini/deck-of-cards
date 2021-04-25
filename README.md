@@ -1,38 +1,96 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Deck of Cards Game 🃏
 
-You can see it directly [here](https://random-card-picker.herokuapp.com/).
 
-## Description
+## Contents 📋
 
-React SPA displaying a deck of playing cards.
+- [Getting Started](#start)
+- [Running Apps](#dev)
+- [Linting](#lint)
+- [Testing](#tests)
+- [StorybookJS](#storybookjs)
+
+## <a name="start">Description 💬</a>
+
+React Single Page Application displaying a deck of playing cards.
 You have 3 actions:
-- shuffle
-- deal a random card
-- show/hide the deck
-Cards picked are displayed below.
+- shuffle the deck of cards
+- draw any given number of cards from the deck
+- sort the drawn card by suit: Clubs, Spades, Hearts, Diamonds; then by value: Ace is high
 
-## Launch project
+Drawn cards are removed from the original deck and displayed below.
 
-To see this this project, you can clone it directly.
-Then run (in root folder):
+## <a name="start">Demo 🎮</a>
 
-### `npm install`
-or
-### `yarn install`
+![Demo of game](./public/demo.gif)
 
-This will install dependencies.
+## <a name="start">Getting Started 🛠</a>
 
-Finally
 
-### `npm start`
-or
-### `yarn start`
+### Initial install
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+yarn
+```
 
-## Next steps
 
-- Add Redux for state management
-- Add Flow for type checking
-- Improve UI/UX
+### Git hooks
+
+We use git hooks to run lint, test and formatting on staged files on `git commit`
+commands.
+
+Details are in `package.json` .
+
+## <a name="dev">Development mode ⚠️</a>
+
+### Deck of Cards React App
+
+Run Deck of Cards app on a dev server at [localhost:3000](http://localhost:3000)
+
+```
+yarn start
+```
+
+## <a name="lint">JS and SCSS Linting 🧹</a>
+
+### Stylelint
+
+We use [StyleLint](https://stylelint.io/) to avoid errors and enforce consistent
+conventions in the stylesheets.
+
+- `yarn lint:css` Project-wide configuration is defined in `./.stylelintrc`
+
+### ESLint
+
+`yarn lint:js` Project-wide configuration is defined in `./.eslintrc`.
+
+## <a name="tests">Tests 📊</a>
+
+We use [@testing-library](https://testing-library.com/) to run unit and snapshot
+tests where available across the application.
+
+Project-wide config, including code coverage can be found in `./jest.config.js`
+Run tests (with coverage report)
+
+```
+yarn test
+
+```
+
+
+## <a name="storybookjs">Storybook 📕</a>
+
+We use [Storybook](https://storybook.js.org) to develop components in isolation.
+
+Run storybook on a development server at [localhost:6006](http://localhost:6006)
+
+```
+yarn storybook
+```
+
+Build storybook to `./storybook-dist/`
+
+```
+yarn build:storybook
+```
+
+Storybook config is in `./.storybook/`

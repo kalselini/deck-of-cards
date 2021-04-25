@@ -17,6 +17,6 @@ const Template = (args) => <CardDeck {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  deckArray: deckArray,
+  deckArray,
   shuffle: false,
 };

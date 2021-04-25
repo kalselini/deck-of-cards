@@ -49,7 +49,7 @@ const App = () => {
       (element) => element.index !== randomCard.index
     );
     setCardsArray(newCardsArray);
-    let cardsDrawnArray = cardsDrawn;
+    const cardsDrawnArray = cardsDrawn;
     cardsDrawnArray.length < 52 && cardsDrawnArray.push(randomCard);
     setCardsDrawn(cardsDrawnArray);
   };
@@ -59,7 +59,7 @@ const App = () => {
       return a.index - b.index;
     });
     setCardsDrawn(sortCardsDrawn);
-    setSortComplete(sortComplete ? false : true);
+    setSortComplete(!sortComplete);
   };
 
   return (
@@ -67,7 +67,7 @@ const App = () => {
       <CardDeck
         deckArray={cardsArray}
         front={front}
-        className={'slideInDown'}
+        className="slideInDown"
         shuffle={shuffleAnimation}
       />
       <ButtonGroup>
@@ -93,7 +93,7 @@ const App = () => {
           Arrange
         </Button>
       </ButtonGroup>
-      <CardDeck deckArray={cardsDrawn} front={true} className={'slideInUp'} />
+      <CardDeck deckArray={cardsDrawn} front className="slideInUp" />
     </div>
   );
 };
