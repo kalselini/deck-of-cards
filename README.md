@@ -85,7 +85,7 @@ Run storybook on a development server at [localhost:6006](http://localhost:6006)
 yarn storybook
 ```
 
-Build storybook`
+Build storybook
 
 ```
 yarn build-storybook
