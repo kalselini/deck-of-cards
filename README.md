@@ -57,7 +57,7 @@ yarn start
 We use [StyleLint](https://stylelint.io/) to avoid errors and enforce consistent
 conventions in the stylesheets.
 
-- `yarn lint:css` Project-wide configuration is defined in `./.stylelintrc`
+`yarn lint:css` Project-wide configuration is defined in `./.stylelintrc`
 
 ### ESLint
 
@@ -73,7 +73,6 @@ Run tests (with coverage report)
 
 ```
 yarn test
-
 ```
 
 
