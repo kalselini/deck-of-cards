@@ -4,6 +4,8 @@ import '@testing-library/jest-dom';
 import Button from './index';
 import { ShuffleIcon } from '../../assets';
 
+// TODO: Write test to include default onClick function
+
 afterEach(cleanup);
 
 describe('Button component', () => {
@@ -12,16 +14,6 @@ describe('Button component', () => {
       render(<Button />);
       expect(screen.getByRole('button')).toBeInTheDocument();
     });
-
-    // test('should call onClick prop when clicked', () => {
-    //   const mockedFunction = jest.fn();
-
-    //   const wrapper = shallow(<Button onClick={mockedFunction} />);
-
-    //   wrapper.find('button').simulate('click');
-
-    //   expect(mockedFunction).toHaveBeenCalled();
-    // });
   });
 
   describe('given props', () => {
@@ -47,15 +39,6 @@ describe('Button component', () => {
       );
       expect(screen.getByText(/click me/i)).toBeInTheDocument();
     });
-
-    // test('should display start icon from prop', () => {
-    //   const { container } = render(
-    //     <Button onClick={testProps.onClick} startIcon={testProps.startIcon}>
-    //       {testProps.children}
-    //     </Button>
-    //   );
-    //   expect(container.find('svg').hasClass('MuiSvgIcon-root')).to.eq(true);
-    // });
 
     test('should call onClick prop when clicked', () => {
       render(

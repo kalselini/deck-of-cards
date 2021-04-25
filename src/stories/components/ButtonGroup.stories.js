@@ -9,6 +9,7 @@ export default {
   argTypes: {},
 };
 
+/* eslint-disable react/jsx-props-no-spreading */
 const Template = (args) => <ButtonGroup {...args} />;
 
 const buttonsArray = [

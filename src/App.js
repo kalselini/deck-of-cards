@@ -14,14 +14,19 @@ const App = () => {
   const [cardsArray, setCardsArray] = useState(deckArray);
   const [cardsDrawn, setCardsDrawn] = useState([]);
 
-  // Disables the action buttons, turn the cards face down,
-  // and enable shuffle animation sequence for 2.4s
+  /**
+   * Starts the shuffle process by disabling the action buttons, turning the cards face down
+   * and triggering the shuffle animation
+   */
   const startShuffleAnimation = () => {
     setbuttonsDisabled(true);
     setFront(false);
     setShuffleAnimation(true);
   };
 
+  /**
+   * Once the shuffle process is triggered, the previous states are returned within 2.4s
+   */
   useEffect(() => {
     const timeout = setTimeout(() => {
       setFront(true);
@@ -32,7 +37,9 @@ const App = () => {
     return () => clearTimeout(timeout);
   }, [shuffleAnimation]);
 
-  // Fisher-Yates Shuffle
+  /**
+   *  Shuffles the orginal deck of cards using the Fisher-Yates Shuffle algorithm
+   */
   const shuffle = (deck) => {
     let count = deck.length;
     while (count) {
@@ -42,6 +49,11 @@ const App = () => {
     startShuffleAnimation();
   };
 
+  /* eslint-disable no-unused-expressions */
+
+  /**
+   *  Removes one random card from the origin deck and adds it to the drawn cards array
+   */
   const dealOneCard = () => {
     const randomCard =
       cardsArray[Math.floor(Math.random() * cardsArray.length)];
@@ -54,10 +66,16 @@ const App = () => {
     setCardsDrawn(cardsDrawnArray);
   };
 
+  /**
+   *  Arranges the drawn cards array in order of suit and value based using the index
+   *  in the card array
+   */
   const arrange = () => {
-    const sortCardsDrawn = cardsDrawn.sort(function (a, b) {
+    const sortingAlgorithm = (a, b) => {
       return a.index - b.index;
-    });
+    };
+
+    const sortCardsDrawn = cardsDrawn.sort(sortingAlgorithm);
     setCardsDrawn(sortCardsDrawn);
     setSortComplete(!sortComplete);
   };

@@ -68,7 +68,6 @@ conventions in the stylesheets.
 We use [@testing-library](https://testing-library.com/) to run unit and snapshot
 tests where available across the application.
 
-Project-wide config, including code coverage can be found in `./jest.config.js`
 Run tests (with coverage report)
 
 ```
@@ -86,10 +85,10 @@ Run storybook on a development server at [localhost:6006](http://localhost:6006)
 yarn storybook
 ```
 
-Build storybook to `./storybook-dist/`
+Build storybook`
 
 ```
-yarn build:storybook
+yarn build-storybook
 ```
 
 Storybook config is in `./.storybook/`
