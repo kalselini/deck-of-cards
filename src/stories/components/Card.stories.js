@@ -36,6 +36,7 @@ export default {
   },
 };
 
+/* eslint-disable react/jsx-props-no-spreading */
 const Template = (args) => <Card {...args} />;
 
 export const Primary = Template.bind({});

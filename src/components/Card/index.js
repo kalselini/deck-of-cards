@@ -9,10 +9,10 @@ import './card.scss';
 const Card = (props) => {
   const { suit, cardRanking, front, className } = props;
 
-  const getCardStyle = (suit) => {
+  const getCardStyle = (cardSuit) => {
     let symbol;
     let color;
-    switch (suit) {
+    switch (cardSuit) {
       case 'Diamond':
         return { symbol: diamond, color: 'red' };
       case 'Heart':
