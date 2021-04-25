@@ -17,7 +17,11 @@ const CardDeck = (props) => {
       {deckArray &&
         deckArray.map((card, index) => {
           return (
-            <div className={classNames('animated', className)} key={index}>
+            <div
+              className={classNames('animated', className)}
+              getByTestId="cards-deck__cards"
+              key={index}
+            >
               <Card
                 suit={card.suit}
                 cardRanking={card.card}

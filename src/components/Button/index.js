@@ -28,7 +28,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  children: '',
+  children: 'Click Me',
   disabled: false,
   startIcon: null,
   onClick: () => {},

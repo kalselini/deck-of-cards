@@ -34,7 +34,12 @@ const Card = (props) => {
       data-testid="card-front"
     >
       <div className="card__suit-ranking">
-        <div className="suit-ranking__symbol">{cardRanking}</div>
+        <div
+          className="suit-ranking__symbol"
+          data-testid="suit-ranking__symbol"
+        >
+          {cardRanking}
+        </div>
         <img
           className="suit-ranking__symbol"
           src={cardStyle.symbol}
@@ -61,6 +66,7 @@ const Card = (props) => {
     <div
       className={classNames('card', className)}
       style={{ backgroundImage: `url(${backCardImg})` }}
+      data-testid="card-back"
     ></div>
   );
 };

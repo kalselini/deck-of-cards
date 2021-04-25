@@ -13,11 +13,14 @@ describe('Button component', () => {
       expect(screen.getByRole('button')).toBeInTheDocument();
     });
 
-    // test('should have default handlePress that returns nothing', () => {
-    //   const renderedButton = render(<Button />);
-    //   const result = renderedButton.defaultProps.onClick();
-    //   expect(renderedButton.defaultProps.onClick).toBeDefined();
-    //   expect(result).toBe(null);
+    // test('should call onClick prop when clicked', () => {
+    //   const mockedFunction = jest.fn();
+
+    //   const wrapper = shallow(<Button onClick={mockedFunction} />);
+
+    //   wrapper.find('button').simulate('click');
+
+    //   expect(mockedFunction).toHaveBeenCalled();
     // });
   });
 

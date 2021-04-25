@@ -26,6 +26,7 @@
     "**/*.js": [
       "eslint ./src --fix",
       "prettier-eslint 'src/**/*.{js,json}' --write",
+      "yarn test",
       "git add"
     ]
   },
