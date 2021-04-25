@@ -10,7 +10,8 @@ const Card = (props) => {
   const { suit, cardRanking, front, className } = props;
 
   const getCardStyle = (suit) => {
-    let symbol, color;
+    let symbol;
+    let color;
     switch (suit) {
       case 'Diamond':
         return { symbol: diamond, color: 'red' };
@@ -67,7 +68,7 @@ const Card = (props) => {
       className={classNames('card', className)}
       style={{ backgroundImage: `url(${backCardImg})` }}
       data-testid="card-back"
-    ></div>
+    />
   );
 };
 
