@@ -1,19 +1,6 @@
 # Deck of Cards Game 🃏
 
 
-## Tutorial 🤓
-
-This README is designed to help people who know why they're here get up and
-running.
-
-You will not find it to be an exhaustive list of topics, so we really recommend
-visiting the tutorial website:
-https://pages.github.ibm.com/ixliberty/ixl-tutorial-website/
-
-This contains tutorials on the concepts, information on env vars, decisions
-we've made on advanced topics, and a whole lot more besides
-
-
 ## Contents 📋
 
 - [Getting Started](#start)
@@ -24,20 +11,17 @@ we've made on advanced topics, and a whole lot more besides
 
 ## <a name="start">Description 💬</a>
 
-### Description
-
-React SPA displaying a deck of playing cards.
+React Single Player Game displaying a deck of playing cards.
 You have 3 actions:
-- shuffle
-- deal a random card
-- show/hide the deck
-Cards picked are displayed below.
+- shuffle the deck of cards
+- draw any given number of cards from the deck
+- sort the drawn card by suit: Clubs, Spades, Hearts, Diamonds; then by value: Ace is high
+
+Drawn cards are removed from the original deck and displayed below.
 
 ## <a name="start">Demo 🎮</a>
 
-### Demo
-
-Place gif here
+![Demo of game](./public/demo.gif)
 
 ## <a name="start">Getting Started 🛠</a>
 
@@ -54,21 +38,13 @@ npm i -g npx lerna
 ### Initial install
 
 ```
-npm i
-npm run bootstrap
+yarn
 ```
 
-Note that `npm i` will copy any `.env.example` to `.env` . Please verify and
-adjust the content of the `.env` files in accordance with your environment.
-
-### VSCode
-
-If you use VSCode editor, there is a set of recommended extensions to install in
-`./.vscode` to help you on this project.
 
 ### Git hooks
 
-We use git hooks to run lint, test and formatting on staged files on `git push`
+We use git hooks to run lint, test and formatting on staged files on `git commit`
 commands.
 
 Details are in `package.json` .
@@ -77,10 +53,10 @@ Details are in `package.json` .
 
 ### B2C Storefront React App
 
-Run B2C Example app on a dev server at [localhost:3100](http://localhost:3100)
+Run B2C Example app on a dev server at [localhost:3000](http://localhost:3000)
 
 ```
-npm run dev:app:b2c:csr
+yarn start
 ```
 
 Build B2C Client Side React App
@@ -122,9 +98,7 @@ Project-wide configuration is defined in `stylelint.config.js`
 
 ### ESLint
 
-`npm run lint:js` Project-wide configuration is defined in `eslintrc.js` , but
-packages may override these defaults by placing an `.eslintrc` file in the
-package folder.
+`npm run lint:js` Project-wide configuration is defined in `eslintrc.js`.
 
 ## <a name="tests">Tests 📊</a>
 
@@ -135,14 +109,7 @@ Project-wide config, including code coverage can be found in `./jest.config.js`
 Run tests (with coverage report)
 
 ```
-npm t
-
-```
-
-Watch mode
-
-```
-npm run test:w
+yarn test
 
 ```
 
@@ -154,19 +121,19 @@ We use [Storybook](https://storybook.js.org) to develop components in isolation.
 Run storybook on a development server at [localhost:6006](http://localhost:6006)
 
 ```
-npm run storybook
+yarn storybook
 ```
 
 Build storybook to `./storybook-dist/`
 
 ```
-npm run build:storybook
+yarn build:storybook
 ```
 
 Serve storybook (production)
 
 ```
-npm run prod:storybook
+yarn prod:storybook
 ```
 
 Storybook config is in `./.storybook/`
